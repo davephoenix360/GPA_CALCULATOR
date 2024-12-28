@@ -1,7 +1,7 @@
-**GPA-Calculator
-**
-**Description
-**
+# GPA-Calculator
+
+## Description
+
 The GPA-Calculator is a command-line program designed to assist students in managing their academic data. It provides several key functionalities:
 
 GPA Calculation: Students can input their course grades and calculate their CGPA.
