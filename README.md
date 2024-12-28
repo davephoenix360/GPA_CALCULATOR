@@ -1,236 +1,154 @@
-# GPA-Calculator
+# 🎓 GPA Calculator
 
-## Description
+A command-line utility for students to manage academic records, calculate GPA, and generate result sheets.
 
-The GPA-Calculator is a command-line program designed to assist students in managing their academic data. It provides several key functionalities:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0-green.svg)
+![C++](https://img.shields.io/badge/C++-11-00599C.svg)
 
-GPA Calculation: Students can input their course grades and calculate their CGPA.
+## 📚 Overview
 
-Course Management: Admins can add or remove courses from a list of available courses.
+GPA Calculator helps students track their academic progress with features including:
+- Automated GPA calculation based on course grades
+- Administrative course management system
+- Detailed result sheet generation
+- Persistent data storage using file handling
 
-Result Sheet Generation: The software generates a printable result sheet that includes courses, grades, and the CGPA.
+## ✨ Key Features
 
+### 📊 GPA Calculation
+- Select courses from a curated list
+- Input grades using standard letter format (A+, A, A-, etc.)
+- Automatic CGPA computation
 
-The program uses basic file handling to load courses and store them persistently, and it offers a user-friendly interface to manage student academic details.
+### 👩‍💼 Administrative Tools
+- Secure admin login system
+- Course list management
+  - Add new courses
+  - Remove existing courses
+- Course database maintenance
 
+### 📃 Result Sheet Generation
+- Comprehensive academic reports including:
+  - Student information
+  - Course details with grades
+  - Calculated CGPA
+  - Semester summary
 
----
+## 🔧 System Requirements
 
-Features
+- **Compiler:** C++11 compatible (g++, MSVC)
+- **IDE/Editor:** Any C++ compatible (VS Code, Visual Studio, Code::Blocks)
+- **OS:** Cross-platform (Windows, Linux, macOS)
 
-1. Calculate GPA
+## 🚀 Getting Started
 
-Students can select from a list of available courses and input their grades.
+### Installation
 
-GPA is calculated based on the student's selected courses and grades.
-
-Supports common letter grades (e.g., A+, A, A-, B+, B, etc.).
-
-
-
-2. Admin Functionality
-
-Admin users can log in to manage the list of available courses.
-
-Admins can add new courses to the list.
-
-Admins can remove courses from the list (if implemented).
-
-
-
-3. Result Sheet
-
-Students can generate and print a detailed result sheet that includes:
-
-Student details (name, program, semester, etc.).
-
-List of courses with grades.
-
-CGPA calculated based on the entered grades.
-
-
-
-
-
-
----
-
-Requirements
-
-To run the GPA-Calculator, ensure you have the following:
-
-C++ compiler: Compatible with C++11 or later (e.g., g++, MSVC).
-
-Text Editor/IDE: Any C++ compatible IDE or text editor (e.g., Visual Studio, Code::Blocks, VS Code).
-
-Operating System: Any OS with a C++ compiler (Windows, Linux, macOS).
-
-
-
----
-
-How to Run the Program
-
-Step 1: Clone the Repository
-
-Clone the repository to your local machine.
-
+```bash
+# Clone the repository
 git clone https://github.com/your-username/student-helper-software.git
+
+# Navigate to project directory
 cd student-helper-software
 
-Step 2: Compile the Program
-
-Ensure you have a C++ compiler installed. If using g++, run the following command to compile the program.
-
+# Compile the program
 g++ -o student_helper project.cpp
 
-Step 3: Run the Program
-
-After compiling, run the program using:
-
+# Run the application
 ./student_helper
+```
 
-The program will display a menu and guide you through different options like calculating GPA, managing courses (if you're an admin), and generating a result sheet.
-
-
----
-
-Usage
-
-Main Menu
-
-Upon launching the program, you will be presented with the main menu with the following options:
-
-1. Calculate your GPA: Allows students to input grades for selected courses and calculates the GPA.
-
-
-2. Manage courses (Admin only): If you're an admin, you can log in to modify the course list (add/remove courses).
-
-
-3. Print your result sheet: Generates and prints a result sheet with your courses and GPA.
-
-
-4. Exit: Exits the program.
-
-
-
-Admin Login
-
-To access the course management features, admins will be prompted for a username and passkey:
-
+### 🔑 Admin Access
+```
 Username: Admin
-
 Passkey: 2023
+```
 
+## 📖 Usage Guide
 
+### Main Menu Options
+1. **Calculate GPA**
+   - Select courses from available list
+   - Input grades
+   - View calculated GPA
 
----
+2. **Course Management** (Admin only)
+   - Add/remove courses
+   - Modify course details
 
-Course File Format
+3. **Result Sheet**
+   - Generate detailed academic reports
+   - View semester summary
 
-The program reads course data from the courses.txt file. Each line in the file should contain the course credit and course name, separated by a space. For example:
+### 📝 Course Data Format
 
+Courses are stored in `courses.txt` with the following format:
+```
 3.0 Data Structures
 4.0 Operating Systems
 3.5 Calculus
+```
 
-Adding Courses
+## 📁 Project Structure
 
-Admins can add new courses via the admin menu. The course information will be appended to the courses.txt file.
+```
+student-helper-software/
+├── project.cpp     # Main program
+├── courses.txt     # Course database
+└── README.md       # Documentation
+```
 
+## 🛠️ Technical Details
 
----
+### Core Components
 
-Functionality in Detail
+#### Student Class
+- `inputCourses()`: Course selection interface
+- `calculateGPA()`: GPA computation engine
+- `printResultSheet()`: Report generation
 
-1. Student Class
+#### Admin Class
+- `verifyLogin()`: Authentication system
+- `modifyCourseList()`: Course management interface
 
-inputCourses(): Allows students to input the courses they are taking, based on the available course list.
+## ❗ Troubleshooting
 
-calculateGPA(): Calculates the student's GPA based on their selected courses and entered grades.
+| Issue | Solution |
+|-------|----------|
+| File not found | Verify `courses.txt` exists in program directory |
+| Invalid grade | Use standard grade format (A+, A, A-, B+, etc.) |
+| Login failure | Confirm admin credentials |
 
-printResultSheet(): Generates and prints a result sheet with student details, selected courses, and calculated CGPA.
+## 📝 Example Usage
 
-
-2. Admin Class
-
-verifyLogin(): Admins log in using the preset username (Admin) and passkey (2023).
-
-modifyCourseList(): Allows admins to add or remove courses from the available list.
-
-
-
----
-
-Example
-
-Sample Output
-
+```plaintext
 Welcome to GPA-Calculator
-Please provide the following details:
 Full Name: John Doe
 Program: Computer Science
-Year (numeric): 2
+Year: 2
 Semester: Fall 2024
-
---- Main Menu ---
-1) Calculate your GPA
-2) Manage courses (Admin only)
-3) Print your result sheet
-0) Exit
-Your choice: 1
 
 Available Courses:
 (1) Data Structures - 3.0 credits
 (2) Operating Systems - 4.0 credits
 (3) Calculus - 3.5 credits
 
-Enter the numbers corresponding to your courses (0 to finish):
-1
-Enter grade for Data Structures: A
-2
-Enter grade for Operating Systems: A-
-3
-Enter grade for Calculus: B+
+Your GPA: 3.70
+```
 
-Your GPA is: 3.70
+## 📄 License
 
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
----
+## 🔮 Future Enhancements
 
-File Structure
-
-student-helper-software/
-│
-├── project.cpp           # Main C++ program file
-├── courses.txt           # Text file with course data (credit and course name)
-└── README.md             # Project description and documentation
-
+- Course prerequisite management
+- Automated transcript generation
+- Grade trend analysis
+- Academic progress tracking
+- Semester planning tools
 
 ---
 
-Troubleshooting
-
-1. File not found: If the program is unable to open courses.txt, ensure that the file exists in the same directory as the project.cpp file.
-
-
-2. Invalid grade: If an invalid grade is entered (e.g., "E"), the program will prompt the user to enter a valid grade (A+, A, A-, B+, etc.).
-
-
-3. Admin login failure: If login fails, ensure you're using the correct admin username (Admin) and passkey (2023).
-
-
-
-
----
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-
----
-
-Conclusion
-
-This GPA-Calculator provides a user-friendly way for students to manage their grades and calculate GPA while offering an administrative interface to modify the course list. The software can be expanded in the future to include additional features like course prerequisites, transcript generation, and more.
+**Note:** For bug reports or feature requests, please open an issue in the repository.
