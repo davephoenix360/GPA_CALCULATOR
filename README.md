@@ -1,8 +1,3 @@
-Sure! Here's a comprehensive README.md file for your project:
-
-
----
-
 GPA-Calculator
 
 Description
@@ -239,9 +234,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Conclusion
 
 This GPA-Calculator provides a user-friendly way for students to manage their grades and calculate GPA while offering an administrative interface to modify the course list. The software can be expanded in the future to include additional features like course prerequisites, transcript generation, and more.
-
-
----
-
-Let me know if you need any adjustments to the content!
-
